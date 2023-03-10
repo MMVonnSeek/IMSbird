@@ -1,4 +1,4 @@
-# IMSbird
+# IMS-bird
 
 Flappy Bird in Python, but with a custom logo
 ## What is that?
