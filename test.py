@@ -7,8 +7,8 @@ import sys
 pygame.init()
 
 # Carregue a imagem de fundo
-background1 = pygame.image.load("imsteste.png")
-background2 = pygame.image.load("ceuu.png")
+background1 = pygame.image.load("ims.png")
+background2 = pygame.image.load("ceu.png")
 
 # Defina a largura e a altura da tela
 width, height = 720, 720
