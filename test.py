@@ -89,3 +89,5 @@ while True:
         ypos, vel = 0, -abs(vel)
     clock.tick(60)
     pygame.display.flip()
+
+    #by: Max Muller
