@@ -21,7 +21,7 @@ pygame.display.set_icon(pygame.image.load("logoIMS.png"))
 
 # Carregue as imagens dos objetos do jogo
 bird = pygame.image.load("logo.png")
-bird_dead = pygame.image.load("logolose.png")
+bird_dead = pygame.image.load("lose.png")
 
 # Crie as fontes
 font = pygame.font.SysFont('Arial', 72)
