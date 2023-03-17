@@ -20,7 +20,7 @@ window = pygame.display.set_mode((width, height))
 pygame.display.set_icon(pygame.image.load("logoIMS.png"))
 
 # Carregue as imagens dos objetos do jogo
-bird = pygame.image.load("logo.png")
+bird = pygame.image.load("plan.png")
 bird_dead = pygame.image.load("lose.png")
 
 # Crie as fontes
@@ -66,7 +66,7 @@ while True:
         window.blit(bird,(50,ypos))
         ypos, vel, pipe[0] = ypos - vel, vel - 0.5, pipe[0] - 5
         pygame.draw.rect(window,(0,255,0),(pipe[0],0,50,pipe[1]))
-        pygame.draw.rect(window,(0,255,0),(pipe[0],pipe[1]+300,50,720))
+        pygame.draw.rect(window,(0,255,0),(pipe[0],pipe[1]+150,50,720))
         window.blit(font2.render('Pontuação: ' + str(tscore), True, (0,0,0)), (0, 0))
         if pipe[0] < -50:
             pipe, tscore =[720, random.randint(0,380)], tscore + 1
@@ -82,7 +82,7 @@ while True:
         window.blit(font2.render('Pontuação mais alta - ' + str(hscore), True, (0,0,0), None),(10,70))
 
     # Verifique se o pássaro atingiu um obstáculo ou a borda da tela
-    if ypos >= 528 or ((pipe[0] < 164 and pipe[0] > 14) and (ypos+192 > pipe[1]+300 or ypos < pipe[1])):
+    if ypos >= 528 or ((pipe[0] < 164 and pipe[0] > 14) and (ypos+70 > pipe[1]+300 or ypos < pipe[1])):
         ypos, start, tscore, pipe[0], died, caption = 528, False, 0, 720, True, font2.render('Você perdeu', True, (0,0,0), None)
         game_state = 0
     elif ypos < 0:
