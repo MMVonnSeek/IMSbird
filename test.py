@@ -25,8 +25,8 @@ bird_dead = pygame.image.load("lose.png")
 
 # Crie as fontes
 font = pygame.font.SysFont('Arial', 72)
-font2 = pygame.font.SysFont('Arial', 17)
-font3 = pygame.font.SysFont('Arial', 26)
+font2 = pygame.font.SysFont('Arial', 27)
+font3 = pygame.font.SysFont('Arial', 25)
 
 # Defina o relógio
 clock = pygame.time.Clock()
@@ -67,8 +67,8 @@ while True:
         window.blit(bird,(50,ypos))
         ypos, vel, pipe[0] = ypos - vel, vel - 0.5, pipe[0] - 5
         pygame.draw.rect(window,(0,255,0),(pipe[0],0,50,pipe[1]))
-        pygame.draw.rect(window,(0,255,0),(pipe[0],pipe[1]+150,50,720))
-        window.blit(font2.render('Pontuação: ' + str(tscore), True, (0,0,0)), (0, 0))
+        pygame.draw.rect(window,(0,255,0),(pipe[0],pipe[1]+130,50,720))
+        window.blit(font2.render('Pontuação: ' + str(tscore), True, (255,255,255)), (0, 0))
         if pipe[0] < -50:
             pipe, tscore =[720, random.randint(0,380)], tscore + 1
             if tscore > hscore:
@@ -77,14 +77,14 @@ while True:
     # Desenhe a tela de título se o jogo ainda não começou
     else:
         if died:
-            window.blit(bird_dead,(100,500))
+            window.blit(bird_dead,(0,0))
         window.blit(font.render('', True, (0,0,0), None),(160,0))
         window.blit(caption,(150,620))
         window.blit(font3.render('Pontuação mais alta - ' + str(hscore), True, (0,0,0), None),(5,10))
 
-    # Verifique se o pássaro atingiu um obstáculo ou a borda da tela
-    if ypos >= 528 or ((pipe[0] < 164 and pipe[0] > 14) and (ypos+70 > pipe[1]+300 or ypos < pipe[1])):
-        ypos, start, tscore, pipe[0], died, caption = 528, False, 0, 720, True, font2.render('Você perdeu', True, (0,0,0), None)
+    # Verifique se o avião atingiu um obstáculo ou a borda da tela
+    if ypos >= 528 or ((pipe[0] < 170 and pipe[0] > 14) and (ypos+70 > pipe[1]+170 or ypos < pipe[1])):
+        ypos, start, tscore, pipe[0], died, caption = 528, False, 0, 720, True, font2.render('', True, (105,89,205), None)
         game_state = 0
     elif ypos < 0:
         ypos, vel = 0, -abs(vel)
