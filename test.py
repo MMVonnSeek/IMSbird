@@ -25,7 +25,8 @@ bird_dead = pygame.image.load("lose.png")
 
 # Crie as fontes
 font = pygame.font.SysFont('Arial', 72)
-font2 = pygame.font.SysFont('Arial', 36)
+font2 = pygame.font.SysFont('Arial', 17)
+font3 = pygame.font.SysFont('Arial', 26)
 
 # Defina o relógio
 clock = pygame.time.Clock()
@@ -40,7 +41,7 @@ tscore = 0
 died = False
 
 # Crie a legenda de início
-caption = font2.render('Aperte ESPAÇO para começar', True, (160,0,0), None)
+caption = font2.render('', True, (104,34,139), None)
 
 # Loop principal do jogo
 while True:
@@ -77,9 +78,9 @@ while True:
     else:
         if died:
             window.blit(bird_dead,(100,500))
-        window.blit(font.render('IMS Bird', True, (0,0,0), None),(10,0))
+        window.blit(font.render('', True, (0,0,0), None),(160,0))
         window.blit(caption,(150,620))
-        window.blit(font2.render('Pontuação mais alta - ' + str(hscore), True, (0,0,0), None),(10,70))
+        window.blit(font3.render('Pontuação mais alta - ' + str(hscore), True, (0,0,0), None),(5,10))
 
     # Verifique se o pássaro atingiu um obstáculo ou a borda da tela
     if ypos >= 528 or ((pipe[0] < 164 and pipe[0] > 14) and (ypos+70 > pipe[1]+300 or ypos < pipe[1])):
