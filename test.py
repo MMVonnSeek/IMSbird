@@ -83,7 +83,7 @@ while True:
         window.blit(font3.render('Pontuação mais alta - ' + str(hscore), True, (0,0,0), None),(5,10))
 
     # Verifique se o avião atingiu um obstáculo ou a borda da tela
-    if ypos >= 528 or ((pipe[0] < 170 and pipe[0] > 14) and (ypos+70 > pipe[1]+170 or ypos < pipe[1])):
+    if ypos >= 710 or ((pipe[0] < 170 and pipe[0] > 14) and (ypos+70 > pipe[1]+170 or ypos < pipe[1])):
         ypos, start, tscore, pipe[0], died, caption = 528, False, 0, 720, True, font2.render('', True, (105,89,205), None)
         game_state = 0
     elif ypos < 0:
